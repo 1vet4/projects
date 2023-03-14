@@ -1,0 +1,145 @@
+header, footer, main, aside, article{
+    display: flex;
+    border: 1px solid black;
+}
+footer, header, main{
+    width: 1000px;
+    margin: 0 auto;
+}
+nav{
+    border: 1px solid black;
+    font-size: 30px;
+    width: 1000px;
+}
+nav, h1, h2{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:#5B9BD5;
+    font-weight: 800;
+}
+.destination > h1, h2, p{
+    margin: 10px;
+}
+aside{
+    padding-bottom: 50px;
+}
+nav > span{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:#5B9BD5;
+    font-weight: 800;
+    display: inline-block;
+    align-self: flex-end;
+    text-align: center;
+    padding: 5px;
+}
+.navmenu{
+    width: 100%;
+    text-align: center; 
+    font-size: 30px;
+    display: flex;
+}
+main{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+aside{
+    width: 400px;
+    float: left;
+    background-color: white;
+    flex: 2;
+}
+article{
+    width: 800px;
+    float: right;
+    background-color: white;
+    flex: 1;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.empty{
+    width:20px;
+    border:1px solid black;
+    border-collapse: collapse;
+}
+.question{
+    padding: 8px;
+}
+label{
+    float:left;
+    width:130px;
+    padding: 8px 0px;
+    font-size: 18px;
+}
+input[type=checkbox]{
+    box-shadow: 0px 0px 0px 2px #5B9BD5;
+    margin: 12px 8px;
+}
+input[type=text]{
+    border-color: #5B9BD5;
+    border-width: 2px;
+}
+#question{
+    height: 70px;
+}
+button{
+    margin-top: 40px;
+    background-color: #5B9BD5;
+    font-size: 14px;
+    color: antiquewhite;
+    border: #5B9BD5;
+    padding: 10px 15px;
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+.bong{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.fly{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+.group{
+    text-align: left;
+}
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+        width: auto;
+    }
+    footer, header, main{
+        width: 100%;
+        margin: 0 auto;
+    }
+    nav{
+        border: 1px solid black;
+        font-size: 30px;
+        width: 100%;
+    }
+    .navmenu{
+        width: 100%;
+        text-align: center; 
+        font-size: 15px;
+        display: flex;
+    }
+    aside{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    article{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .main aside.under {
+        display:none;
+    }
+    .main aside.float {
+        display:initial;
+        float:right;
+        width:auto;
+    }
+    }
