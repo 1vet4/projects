@@ -1,15 +1,18 @@
-header, footer, main, aside, article{
+header, footer, aside, article{
     display: flex;
     border: 1px solid black;
+    margin-bottom: -1px;
 }
 footer, header, main{
     width: 1000px;
-    margin: 0 auto;
 }
 nav{
     border: 1px solid black;
     font-size: 30px;
     width: 1000px;
+    margin-top: -1px;
+    margin-right: -1px;
+    margin-bottom: -1px;
 }
 nav, h1, h2{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -19,8 +22,14 @@ nav, h1, h2{
 .destination > h1, h2, p{
     margin: 10px;
 }
-aside{
-    padding-bottom: 50px;
+article, aside {
+    display: inline-block;
+    vertical-align: top;
+}
+aside img{
+    display: block;
+    width: 100%;
+    height: auto;
 }
 nav > span{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -46,22 +55,20 @@ aside{
     float: left;
     background-color: white;
     flex: 2;
+    padding-bottom: 50px;
 }
 article{
     width: 800px;
     float: right;
     background-color: white;
     flex: 1;
-}
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
+    margin-right: -1px;
+}   
 .empty{
     width:20px;
     border:1px solid black;
     border-collapse: collapse;
+    margin-bottom: -1px;
 }
 .question{
     padding: 8px;
@@ -106,40 +113,44 @@ button{
 .group{
     text-align: left;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 728px) {
     body {
         background-color: lightblue;
         width: auto;
     }
-    footer, header, main{
+    footer, header{
+        /*
+        border: 1px solid black;
+        */
+        border: none;
+        box-sizing: border-box;
+    }
+    footer, header{
+        width: 100vw;
+    }
+    main{
         width: 100%;
-        margin: 0 auto;
     }
     nav{
         border: 1px solid black;
         font-size: 30px;
-        width: 100%;
+        width: 100vw;
     }
     .navmenu{
-        width: 100%;
+        width: auto;
         text-align: center; 
-        font-size: 15px;
+        font-size: 10px;
         display: flex;
+        margin-bottom: 0;
     }
-    aside{
+    article, aside {
+        display: block;
         width: 100%;
-        flex-wrap: wrap;
     }
-    article{
-        width: 100%;
-        flex-wrap: wrap;
+    aside img{
+        width: auto;
     }
-    .main aside.under {
-        display:none;
-    }
-    .main aside.float {
-        display:initial;
-        float:right;
-        width:auto;
+    .empty{
+        margin: 0px -1px -1px -1px;
     }
     }
