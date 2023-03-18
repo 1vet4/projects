@@ -1,0 +1,111 @@
+.custom-header, .custom-footer {
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+body{
+    padding-top: 10px;
+}
+.menu{
+    border-left: 1px solid black;
+}
+.navmenu{
+    width: 100%;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 50px;
+}
+nav, h1, h2{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:#5B9BD5;
+    font-weight: 800;
+}
+nav > span{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:#5B9BD5;
+    font-weight: 800;
+    display: inline-block;
+    align-self: flex-end;
+    text-align: center;
+    padding: 5px;
+}
+input[type=checkbox]{
+    box-shadow: 0px 0px 0px 2px #5B9BD5;
+    margin: 12px 8px;
+}
+input[type=text]{
+    border-color: #5B9BD5;
+    border-width: 2px;
+}
+#question{
+    height: 70px;
+}
+button{
+    margin-top: 40px;
+    background-color: #5B9BD5;
+    font-size: 14px;
+    color: antiquewhite;
+    border: #5B9BD5;
+    padding: 10px 15px;
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+.bong{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+
+}
+.fly{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color:black;
+
+}
+.custom-main {
+    max-width: 1000px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    min-height: 500px;
+}
+
+.custom-aside {
+    flex: 2;
+    margin: 0 20px 0 0;
+    border-right: 1px solid black;
+    padding-right: 0;
+}
+
+.custom-article {
+    flex: 1;
+    margin: 0 0 0 0;
+    border-left: 1px solid black;
+    padding-left: 0;
+
+}
+
+.custom-row {
+    display: flex;
+    align-items: stretch;
+}
+
+.img-fluid{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap v5 - Exercise 1 </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link href="LAB01-bs.css" rel="stylesheet">
+    <script src="LAB01-bs.js"></script>
+</head>
+
+<body>
+    <header class="container-fluid custom-header">
+        <div class="row">
+          <div class="col-sm-3">
+            <img src="logo.png" alt="logo">
+          </div>
+          <div class="col-sm-9 menu">
+            <nav class="navmenu">
+                <span href="trips.html">TRIPS</span><span> | </span>
+                <span href="promotions.html"> PROMOTIONS</span><span> | </span>
+                <span href="contacts.html"> CONTACTS</span>
+            </nav>
+          </div>
+        </div>
+      </header>
+    <div class="container mt-0 custom-main">
+        <div class="row custom-row">
+            <aside class="col-sm-4 custom-aside">
+                <div class="card h-100 w-100">
+                    <div class="card-body">
+                        <h1>BEST DESTINATION</h1>
+                        <h2>BRASIL</h2>
+            
+                        <p>Can you picture yourself here?</p>
+                        
+                    </div>
+                    <img src="holiday.png" alt="picture" class="mb-5 img-fluid">
+                </div>
+            </aside>
+            <article class="col-sm-8 custom-article">
+                <div class="card h-100 w-100">
+                    <div class="card-body">
+                        <form class="question">
+                            <h2>ASK PRICE</h2>
+                            <label for="email">Email:</label><br>
+                            <input type="text" name="email" class="box"><br>
+                            
+                            <label for="qst"> Question:</label><br>
+                            <input type="text" name="qst" id="question" class="box"><br>
+            
+                            <label for="hotel">Includes hotel?</label>
+                            <input type="checkbox" name="hotel"><br>
+            
+                            <button type="submit">SEND</button>
+                        </form>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <footer class="container-fluid mt-0 custom-footer">
+        <div class="row">
+            <div class="col">
+                <p><span class="bong"> &copy BONG 2023 - </span> <span class="fly">FLY WITH US</span><br>
+                    Made by: <br> 
+                    -Iveta Abramaviciute 20222238 <br>
+                    -Danielius Rekus 20222254 <br>
+                    -Kaja Ferjan <br>
+                    -Nedim Handzic 20222255 <br>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
