@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <link href="LAB02.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"
+        integrity="sha512-lvcHFfj/075LnEasZKOkj1MF6aLlWtmpFEyd/Kc+waRnlulG5er/2fEBA5DBff4BZrcwfvnft0PiAv4cIpkjpw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="LAB02.js"></script>
+
+</head>
+
+<body>
+    <div class="page">
+        <header class="clearfix">
+            <div class="photo">
+                <img src="LAB2_IMAGES/logo.gif" alt="logo">
+            </div>
+            <nav class="navmenu">
+                <span href="trips.html">TRIPS</span><span> | </span>
+                <span href="promotions.html"> PROMOTIONS</span><span> | </span>
+                <span href="contacts.html"> CONTACTS</span>
+            </nav>
+            <!-- 
+        BETTER 
+        <nav class="navmenu">
+            <a href="trips.html">TRIPS</a><a> | </a>
+            <a href="promotions.html"> PROMOTIONS</a><a> | </a>
+            <a href="contacts.html"> CONTACTS</a>
+        </nav>
+        -->
+        </header>
+
+        <main class="clearfix">
+            <aside>
+                <div class="destination">
+                    <h1>BEST DESTINATIONS</h1>
+                    <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="4000"
+                        data-cycle-slides="> h2" id="rotate_text">
+                        <h2>BRASIL</h2>
+                        <h2>LONDON</h2>
+                        <h2>TOKYO</h2>
+                    </div>
+                    <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="4000"
+                        data-cycle-slides="> p" id="rotate_text2">
+                        <p>Can you picture yourself here?</p>
+                        <p>So close yet so different</p>
+                        <p>Where the sun rises</p>
+                    </div>
+                    <div id="rotate">
+                        <img src="LAB2_IMAGES/brasil.jpg" alt="picture">
+                        <img src="LAB2_IMAGES/londres.jpg" alt="picture">
+                        <img src="LAB2_IMAGES/tokyo.jpg" alt="picture">
+                    </div> 
+                </div>
+                <div class="blank"></div>
+            </aside>
+            <div class="empty"></div>
+
+            <article>
+                <form class="question">
+                    <h2>ASK PRICE</h2>
+                    <label for="email">Email:</label><br>
+                    <input type="text" name="email" class="box"><br>
+
+                    <label for="qst"> Question:</label><br>
+                    <input type="text" name="qst" id="question" class="box"><br>
+
+                    <label for="hotel">Includes hotel?</label>
+                    <input type="checkbox" name="hotel"><br>
+
+                    <button type="submit">SEND</button>
+                </form>
+            </article>
+        </main>
+
+        <footer>
+            <p><span class="bong"> &copy BONG 2023 - </span> <span class="fly">FLY WITH US</span><br>
+                Made by: <br>
+                -Iveta Abramaviciute 20222238 <br>
+                -Danielius Rekus 20222254 <br>
+                -Kaja Ferjan 20222218<br>
+                -Nedim Handzic 20222255 <br>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
