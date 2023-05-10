@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+#header h1 {
+    margin: 0;
+}
+#logo {
+    font-weight: bold;
+    font-size: 24px;
+}
+#login-btn,
+#register-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+#login-btn {
+    margin-right: 10px;
+}
+#main {
+    text-align: center;
+    margin-top: 50px;
+}
+.box {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-color: #f1f1f1;
+    margin: 20px;
+    border-radius: 10px;
+}
+.box span {
+    font-size: 24px;
+    /* Adjust the font size as needed */
+
+}
+#more-reviews {
+    margin-top: 20px;
+}
