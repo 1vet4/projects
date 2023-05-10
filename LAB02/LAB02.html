@@ -56,14 +56,14 @@
                         <img src="LAB2_IMAGES/brasil.jpg" alt="picture">
                         <img src="LAB2_IMAGES/londres.jpg" alt="picture">
                         <img src="LAB2_IMAGES/tokyo.jpg" alt="picture">
-                    </div> 
+                    </div>
                 </div>
                 <div class="blank"></div>
             </aside>
             <div class="empty"></div>
 
             <article>
-                <form class="question" method="post">
+                <form class="question" id="hotelform"  method="post">
                     <h2>ASK PRICE</h2>
                     <label for="email">Email:</label><br>
                     <input type="text" name="email" class="box"><br>
@@ -74,10 +74,54 @@
                     <label for="hotel">Includes hotel?</label>
                     <input type="checkbox" name="hotel"><br>
 
-                    <button type="submit">SEND</button>
+                    <button type="submit">SEND</button><br>
                 </form>
+
+                <a id="info" onclick="hideform()">more information</a><br>
+                <div id="contact" style="color: white;">
+                    <p>PHONE: 5555205025 <br> FAX: 555525725</p>
+                </div>
+                <a id="price" onclick="showform()" style="color: white;">ask price</a>
+
             </article>
         </main>
+
+        <script>
+            function hideform() {
+                //$("#contact").hide("");
+
+                var hotelform = document.getElementById("hotelform");
+                if (hotelform.style.display == "block")
+                    hotelform.style.display = "none";
+                else
+                    hotelform.style.display = "block";
+
+                //$("#info").hide("");
+
+                $("#contact").css("color", "black");
+                $("#price").css("color", "black");
+
+                //$("#price").hide();
+
+
+                // var contact = document.getElementById("contact");
+                // if (contact.style.display == "block")
+                //     contact.style.display = "none";
+                // else
+                //     contact.style.display = "block";
+            }
+
+            function showform() {
+                $("#info").css("color", "white");
+                $("#contact").css("color", "white");
+
+                var hotelform = document.getElementById("hotelform");
+                if (hotelform.style.display == "block")
+                    hotelform.style.display = "none";
+                else
+                    hotelform.style.display = "block";
+            }
+        </script>
 
         <footer>
             <p><span class="bong"> &copy BONG 2023 - </span> <span class="fly">FLY WITH US</span><br>
@@ -89,6 +133,7 @@
             </p>
         </footer>
     </div>
+
 </body>
 
 </html>
