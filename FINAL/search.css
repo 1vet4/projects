@@ -4,8 +4,6 @@ body {
   padding: 0;
   background-color: #35553D;
 }
-
-
 #header {
   display: flex;
   justify-content: space-between;
@@ -13,28 +11,23 @@ body {
   padding: 20px;
   background-color: #f1f1f1;
 }
-
 #header h1 {
   margin: 0;
 }
-
 #logo {
   font-weight: bold;
   font-size: 24px;
 }
-
 #search-field {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 200px;
 }
-
 #main {
-  text-align: center;
+  text-align: left;
   margin-top: 50px;
 }
-
 .box {
   display: inline-block;
   width: 150px;
@@ -45,12 +38,9 @@ body {
   text-align: center;
   line-height: 150px;
 }
-
 .box span {
   font-size: 24px;
 }
-
-
 #header {
   display: flex;
   justify-content: space-between;
@@ -58,28 +48,19 @@ body {
   padding: 20px;
   background-color: #f1f1f1;
 }
-
 #header h1 {
   margin: 0;
 }
-
 #logo {
   font-weight: bold;
   font-size: 24px;
 }
-
 #search-field {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 200px;
 }
-
-#main {
-  text-align: center;
-  margin-top: 50px;
-}
-
 .box {
   display: inline-block;
   width: 150px;
@@ -90,12 +71,9 @@ body {
   text-align: center;
   line-height: 150px;
 }
-
 .box span {
   font-size: 24px;
 }
-
-
 #header {
   display: flex;
   justify-content: space-between;
@@ -103,28 +81,23 @@ body {
   padding: 20px;
   background-color: #f1f1f1;
 }
-
 #header h1 {
   margin: 0;
 }
-
 #logo {
   font-weight: bold;
   font-size: 24px;
 }
-
 #search-field {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 200px;
 }
-
 #main {
   text-align: center;
   margin-top: 50px;
 }
-
 .box {
   display: inline-block;
   width: 150px;
@@ -135,14 +108,12 @@ body {
   text-align: center;
   line-height: 150px;
 }
-
 .box span {
   font-size: 24px;
 }
-
 #back-button {
   padding: 10px 20px;
-  margin-left: 20px;
+  margin-right: 20px;
   font-size: 16px;
   background-color: #003b02;
   color: #fff;
@@ -150,7 +121,6 @@ body {
   border-radius: 20px;
   cursor: pointer;
 }
-
 #back-button:hover {
   background-color: #0d8200;
 }
