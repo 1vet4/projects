@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Review Page</title>
+  <style>
+    /* CSS styles for the stars */
+    .comment-rating .star {
+      font-size: 16px;
+      color: #777;
+      margin-right: 3px;
+    }
+  
+    .star {
+      color: #ccc;
+      cursor: pointer;
+    }
+  
+    .star.active,
+    .star:hover {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Review rating HTML code -->
+  <div id="review-rating">
+    <span class="star" data-value="1">&#9733;</span>
+    <span class="star" data-value="2">&#9733;</span>
+    <span class="star" data-value="3">&#9733;</span>
+    <span class="star" data-value="4">&#9733;</span>
+    <span class="star" data-value="5">&#9733;</span>
+  </div>
+
+  <!-- JavaScript code -->
+  <script>
+    const reviewRating = document.getElementById('review-rating');
+    if (reviewRating) {
+      const stars = reviewRating.getElementsByClassName('star');
+
+      for (let i = 0; i < stars.length; i++) {
+        stars[i].addEventListener('mouseover', function() {
+          for (let j = 0; j <= i; j++) {
+            stars[j].classList.add('active');
+          }
+        });
+
+        stars[i].addEventListener('mouseout', function() {
+          for (let j = 0; j <= i; j++) {
+            stars[j].classList.remove('active');
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

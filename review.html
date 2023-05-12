@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Review Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="review.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="header">
+        <div id="logo">Tripvice</div>
+    </header>
+
+    <main id="main">
+        
+        <h1 class="title">Review Title</h1>
+        <p class="type">Type</p>
+        <div id="user-rating">
+            <span class="star1 active" data-value="1">&#9733;</span>
+            <span class="star1 active" data-value="2">&#9733;</span>
+            <span class="star1 active" data-value="3">&#9733;</span>
+            <span class="star1 active" data-value="4">&#9733;</span>
+            <span class="star1 inactive" data-value="5">&#9733;</span>
+        </div>
+        <div id="photo-container">
+            <div class="arrow arrow-left">&#8249;</div>
+            <img src="background.jpg" alt="Review Photo" id="review-photo">
+            <div class="arrow arrow-right">&#8250;</div>
+        </div>
+        <p class="review-text">This is the review text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            euismod sem ac quam fringilla efficitur.</p>
+
+        <h2 class="review-text">What do you think?</h2>
+            <div id="rating-section">
+                <div id="comment-section">
+                  <textarea id="comment" rows="4" cols="50" placeholder="Enter your comment"></textarea>
+                </div>
+              </div>
+              
+        <div id="review-rating">
+            <label for="rating">Your rating:</label>
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <br>
+        <button id="rating-button">Submit</button>
+
+
+        <div id="comment-list">
+            <h3>Comments</h3>
+            <div class="comment">
+                <p class="comment-text">Comment 1 of the review.</p>
+                <p class="comment-rating">Rating: 4/5</p>
+                <p class="comment-author">- Commenter 1</p>
+            </div>
+            <div class="comment">
+                <p class="comment-text">Comment 2 of the review.</p>
+                <p class="comment-rating">Rating: 3/5</p>
+                <p class="comment-author">- Commenter 2</p>
+            </div>
+
+        </div>
+    </main>
+    <script src="review.js"></script>
+
+</body>
+
+</html>
