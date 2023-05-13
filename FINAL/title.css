@@ -22,11 +22,14 @@ body {
 }
 #login-btn,
 #register-btn {
+    display:inline-flex;
     padding: 10px 20px;
     background-color: #4CAF50;
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
+    margin-top: 1px;
+    margin-left: 5px;
 }
 #login-btn {
     margin-right: 10px;
