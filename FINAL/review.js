@@ -18,3 +18,15 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+  document.getElementById('like-button').addEventListener('click', function() {
+    alert('You liked the review!');
+});
+
+document.getElementById('dislike-button').addEventListener('click', function() {
+    alert('You disliked the review!');
+});
+
+document.getElementById('back-button').addEventListener('click', function() {
+    window.history.back();
+});
