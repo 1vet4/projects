@@ -1,0 +1,131 @@
+*{
+  font-family: 'Lora', serif;
+  list-style: none;
+}
+body {
+ 
+  margin: 0;
+  padding: 0;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  background-color: #f1f1f1;
+}*/
+
+header{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f1f1;
+  padding: 15px 12px;
+}
+.navbar{
+  display: flex;
+
+}
+.navbar a, .navbar li span{
+  font-size: 25px;
+  font-weight: 600;
+  padding:10px 0;
+  margin:0px 30px;
+  margin-right: 80px;
+  text-decoration: none;
+  color:#7c8379;
+
+
+}
+.navbar input{
+  margin-right:20px;
+}
+.navbar li span{
+  font-size: 20px;
+  margin-right: 5px;
+}
+#header h1 {
+  margin: 0;
+}
+.logo {
+  font-weight: bold;
+  font-size: 38px;
+  margin-left: 15px;
+  color:#7c8379;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+#search-field {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+.box {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  background-color: #f1f1f1;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 150px;
+}
+.box span {
+  font-size: 24px;
+}
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+#header h1 {
+  margin: 0;
+}
+#logo {
+  font-weight: bold;
+  font-size: 24px;
+}
+#search-field {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+#main {
+  text-align: center;
+  margin-top: 50px;
+}
+.box {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  background-color: #f1f1f1;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 150px;
+}
+.box span {
+  font-size: 24px;
+}
+#back-button {
+  padding: 10px 20px;
+  margin-right: 20px;
+  font-size: 16px;
+  background-color: #003b02;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#back-button:hover {
+  background-color: #0d8200;
+}
