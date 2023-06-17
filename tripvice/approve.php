@@ -30,7 +30,7 @@ if ($link === false) {
                 <th>Action</th>
             </tr>
             <?php
-            $query="SELECT id,user_id,title,type,address,description,image FROM review WHERE approved=0 ORDER BY id ASC";
+            $query="SELECT id,user_id,title,type,address,description,photo FROM review WHERE approved=0 ORDER BY id ASC";
             $result=mysqli_query($link,$query);
             while($row=mysqli_fetch_array($result)){
 ?>
@@ -41,7 +41,7 @@ if ($link === false) {
             <td><?php echo $row['type']?></td>
             <td><?php echo $row['address']?></td>
             <td><?php echo $row['description']?></td>
-            <td><?php echo $row['image']?></td>
+            <td><?php echo $row['photo']?></td>
             <td>
                 <form action="approve.php" method="POST">
                     <input type="hidden" name="id" value=<?php echo $row['id']?>>
