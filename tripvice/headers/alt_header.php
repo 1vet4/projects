@@ -3,10 +3,9 @@
 <header>
     <?php
 
-           if (isset($_SESSION['user_id'])){
-            include("user_header.php");
-            
-           }
+            if (isset($_SESSION['user_id'])) {
+                 include("user_header.php");
+            }
            else{
             include("guest_header.php");
            }

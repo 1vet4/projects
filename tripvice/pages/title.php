@@ -37,22 +37,24 @@
               }
               else{
                 $ratio=0;
-              }
-              /* Display review logo */
-              echo '<div class="review-box">
+              }?>
+               <!--Display review logo  -->  
+              <div class="review-box">
               <div class="box">
+              <a href="../pages/review_page.php"><img src="../uploads/<?php echo $row['filename']?>" width=200px height="200px"></a>
               </div>
               <div class="info">
-                <p class="small-info">'.$row['type']. '</p><br>
-                <a href="review_page.php" class="big-info">'.$row['title'] .'</a><br>
-                <p class="small-info">'.$authorName['name'].'</p><br>
-                <p class="small-info">'.$ratio.'% Rating</p><br>
+             
+                <p class="small-info"><?php echo $row['type']?> </p><br>
+                <a href="review_page.php" class="big-info"><?php echo $row['title']?></a><br>
+                <p class="small-info"><?php echo $authorName['name']?></p><br>
+                <p class="small-info"><?php echo $ratio ?> % Rating</p><br>
               </div>
-              </div>';
-              
-              $k++;
-          } 
-          echo '</div>';?>
+              </div>;
+            
+             
+          <?php  $k++; }?> 
+        </div>
     <p id="more-reviews">
       <a href="./browse.php">More Reviews</a>
     </p>

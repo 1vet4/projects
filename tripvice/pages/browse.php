@@ -33,10 +33,12 @@
               else{
                 $ratio=0;
               }
+             
               ?>
+             
              <div class="review-box">
               <div class="box">
-              <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>"/>
+              <a href="../pages/review_page.php"><img src="../uploads/<?php echo $row['filename']?>" width=200px height="200px"></a>
               </div>
               <div class="info">
              

@@ -28,10 +28,11 @@
         <label for="description">Description:</label><br>
         <textarea id="description" name="description" rows="6" cols="70" required></textarea><br><br>
         <label for="image">Add Photo:</label>
-        <input type="file" name="image">
+        <input type="file" name="image" required><br>
 
-
-        <input type="submit" value="Submit">
+      <div class="btn-center">
+        <input type="submit" value="Submit" id="submit-btn">
+      </div>
     </form>
     </div>
 </body>

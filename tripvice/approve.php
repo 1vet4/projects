@@ -35,7 +35,7 @@ include_once("connection.php");
                 <th>Action</th>
             </tr>
             <?php
-            $query="SELECT id,user_id,title,type,address,description,image FROM review WHERE approved=0 ORDER BY id ASC";
+            $query="SELECT * FROM review WHERE approved=0 ORDER BY id ASC";
             $result=mysqli_query($link,$query);
             while($row=mysqli_fetch_array($result)){
 ?>
@@ -46,7 +46,7 @@ include_once("connection.php");
             <td><?php echo $row['type']?></td>
             <td><?php echo $row['address']?></td>
             <td><?php echo $row['description']?></td>
-            <td><?php echo $row['image']?></td>
+            <td><img src="./uploads/<?php echo $row['filename']?>" width=150px height="150px"></td>
             <td>
                 <form action="approve.php" method="POST">
                     <input type="hidden" name="id" value=<?php echo $row['id']?>>
@@ -74,7 +74,7 @@ include_once("connection.php");
         $id=$_POST['id'];
         $select="DELETE FROM review WHERE id='$id'";
         $result=mysqli_query($link,$select);
-        header("Location approve.php");
+        header("Location: approve.php");
     };
 
 ?>
