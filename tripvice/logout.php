@@ -1,10 +1,7 @@
 <?php
-session_start();
-
-$_SESSION = array();
 
 session_destroy();
 
-header("Location: title.html");
+header("Location: pages/title.php");
 exit;
 ?>

@@ -7,12 +7,7 @@ if (isset($_SESSION['user_id'])) {
 
 // Start a session
 require_once 'session.php';
-
-$link = mysqli_connect("localhost", "root", "", "tripvice");
-
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+include_once("connection.php");
 
 $email = mysqli_real_escape_string($link, $_POST['email']);
 $password = mysqli_real_escape_string($link, $_POST['password']);
@@ -31,7 +26,7 @@ if ($result) {
             $_SESSION['email'] = $user['email'];
             //check if an admin is logging in, redirect to approving page
             if($user['admin']==1){
-                header("Location:approve.php");
+                header("Location: approve.php");
                 exit();
             }
             // If user, redirect to a logged-in page 

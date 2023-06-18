@@ -1,15 +1,15 @@
-<header>
-    <a href="title.php" class="logo"><span>Tripvice</span></a>
+
+<header id="header">
+    <a href="../pages/main.php" class="logo"><span>Tripvice</span></a>
   <ul class="navbar">
-    <li> <a href="../add_review.php">Add Review</a></li>
-    <li> <a href="browse.php" id="nav-browse">Browse</a></li>
-    <li><a href="">Profile</a></li>
-    <li> <a href="logout.php">Log Out</a></li>
+    <li> <a href="../pages/add_review_page.php" id="nav-add">Add Review</a></li>
+    <li> <a href="../pages/browse_user.php" id="nav-browse">Browse</a></li>
+    <li><a href="" id="nav-profile">Profile</a></li>
+    <li> <a href="../logout.php" id="nav-logout">Log Out</a></li>
     <li>
-      <form action="../search.php" method="post">
-        <label>Search</label>
-        <input type="text" name="search">
-        <input type="submit" name="submit">
+      <form action="../search.php" method="post" id="nav-search">
+        <input type="text" name="search" placeholder="Enter keyword">
+        <input type="submit" name="submit" value="SEARCH" id="search-btn">
         </form>
     </li>
   </ul>

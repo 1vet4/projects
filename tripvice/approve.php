@@ -1,23 +1,28 @@
 <?php
 
-$link = mysqli_connect("localhost", "root", "", "tripvice");
-
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+include_once("connection.php");
 
 ?>
 <!DOCTYPE html>
 <head>
     <title>Approve Reviews</title>
     <meta charset="utf-8">
-    <link href="./css/approve.css" rel="stylesheet">
+    <link href="css/approve.css?<?=filemtime("css/approve.css")?>" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 
 </head>
 <body>
-    <div class="center">
-        <h1>Admin Approval</h1>
+
+   
+<header>
+    
+   
+  <ul class="navbar">
+   <li class=logo> Approvve Reviews</li>
+    <li class="log-out"><a href="./logout.php" >Log out</a>
+
+  </ul>
+</header>
         <table id="reviews">
             <tr>
                 <th>Id</th>
@@ -30,7 +35,7 @@ if ($link === false) {
                 <th>Action</th>
             </tr>
             <?php
-            $query="SELECT id,user_id,title,type,address,description,photo FROM review WHERE approved=0 ORDER BY id ASC";
+            $query="SELECT id,user_id,title,type,address,description,image FROM review WHERE approved=0 ORDER BY id ASC";
             $result=mysqli_query($link,$query);
             while($row=mysqli_fetch_array($result)){
 ?>
@@ -41,7 +46,7 @@ if ($link === false) {
             <td><?php echo $row['type']?></td>
             <td><?php echo $row['address']?></td>
             <td><?php echo $row['description']?></td>
-            <td><?php echo $row['photo']?></td>
+            <td><?php echo $row['image']?></td>
             <td>
                 <form action="approve.php" method="POST">
                     <input type="hidden" name="id" value=<?php echo $row['id']?>>
@@ -62,13 +67,14 @@ if ($link === false) {
         $id=$_POST['id'];
         $select="UPDATE review SET approved = 1 WHERE id='$id'";
         $result=mysqli_query($link,$select);
+        header("Location: approve.php");
 
     };
     if(isset($_POST["deny"])){
         $id=$_POST['id'];
         $select="DELETE FROM review WHERE id='$id'";
         $result=mysqli_query($link,$select);
-
+        header("Location approve.php");
     };
 
 ?>

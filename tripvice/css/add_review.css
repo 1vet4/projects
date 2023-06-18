@@ -1,56 +1,66 @@
 *{
     font-family: 'Lora', serif;
     list-style: none;
-}
-body {
+  }
+  body {
    
     margin: 0;
     padding: 0;
-    background: #35553dc2;
-}
-/*#header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px;
-    background-color: #f1f1f1;
-}*/
-
-header{
     position: relative;
-    width: 100%;
+    background: #bd9244c2;
+  
+  }
+#header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background-color: #f1f1f1;
-    padding: 15px 12px;
-}
-.navbar{
-    display: flex;
+    align-items:center;
+    padding: 15px;
+    background-color:#f7f7e6;
 
-}
-.navbar a{
+  }
+    
+  #header h1 {
+    margin: 0;
+  }
+
+  header a, header form{
     font-size: 25px;
     font-weight: 600;
     padding:10px 0;
     margin:0px 30px;
     margin-right: 80px;
     text-decoration: none;
-    color:#7c8379;
+    color:#99692b;
+  
+  
+  
+  }
+  .navbar{
+    display: flex;
+    justify-content:right;
+    align-items: center;
+  
+  }
+  .navbar a{
+    font-size: 22px;
+    font-weight: 600;
+    padding:10px 0;
+    margin:0px 30px;
 
+    text-decoration: none;
+    color:#99692b;
 
-}
-#header h1 {
-    margin: 0;
-}
-.logo {
+  
+  
+  }
+  .logo {
     font-weight: bold;
     font-size: 38px;
     margin-left: 15px;
-    color:#7c8379;
+    color:#99692b;
     text-decoration: none;
     letter-spacing: 2px;
-}
+  }
 .container{
     display: flex;
     align-items: center;
@@ -68,20 +78,20 @@ label{
     display: inline-block;
     min-width: 250px;
 }
-input,select{
+#title, #type, #address{
     height: 25px;
     color:rgb(32, 32, 32);
     background-color: #eeeeee;
     min-width: 200px;
 }
-select{
+#type{
     font-size: 20px;
     height: auto;
 }
-label,input,select,textarea{
+label, #title, #address, #type,textarea{
     margin-bottom: 20px;
 }
-@media (max-width:1280px){
+ @media (max-width:1280px){
     header{
         padding: 14px 2%;
 
@@ -104,4 +114,35 @@ label,input,select,textarea{
         border-radius: 10px;
         
     }
+}
+
+
+
+#search-btn {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #0000009f;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#search-btn:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+    #search-btn {
+    padding: 0.25em 0.75em;
+  }
 }

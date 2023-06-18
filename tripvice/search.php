@@ -1,9 +1,6 @@
 <?php
 
-$link = mysqli_connect("localhost", "root", "", "tripvice");
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+include_once("connection.php");
 
 if (isset($_SESSION['user_id'])) {
     $_SESSION = array();

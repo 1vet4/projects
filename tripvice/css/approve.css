@@ -1,26 +1,54 @@
-
 *{
     font-family: 'Lora', serif;
     list-style: none;
-}
-body {
+  }
+  body {
    
     margin: 0;
     padding: 0;
-    background: #51815dc2;
-}
+    position: relative;
+    background: #35553dc2;
+  
+  }
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  
+  }
+  .navbar a, .navbar li span{
+    font-size: 25px;
+    font-weight: 600;
+    padding:10px 0;
+    margin:0px 30px;
+    margin-right: 80px;
+    text-decoration: none;
+    color:#f1f1f1;
+  
+  }
+  .navbar li span{
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  .logo {
+    font-weight: bold;
+    font-size: 38px;
+    margin-left: 15px;
+    color:#f1f1f1;
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+  .log-out{
+    float:right
+  }
 table,th,tr{
     border:1px solid #f1f1f1;
 }
 th{
     width:150px;
 }
-h1{
-    text-align: center;
-    font-size: 52px;
-    color:#f1f1f1;
-    margin-bottom:70px;
-}
+
 table{
     margin-left:auto;
     margin-right:auto;

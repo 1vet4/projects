@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Login Page</title>
-  <link rel="stylesheet" href="../css/login.css">
+  <link href="../css/login.css?<?=filemtime("../css/login.css")?>" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 </head>
 <body>

@@ -2,13 +2,13 @@
 
 <header>
     <?php
-            /* Still need to check if a user is logged in and then display a different header */
+
            if (isset($_SESSION['user_id'])){
-            include_once("user_header.php");
-            include_once("user_greeting.php");
+            include("user_header.php");
+            
            }
            else{
-            include_once("guest_header.php");
+            include("guest_header.php");
            }
 
     

@@ -2,14 +2,7 @@
 print_r($_REQUEST);
 
 require_once 'session.php';
-
-// Connect to the database
-$link = mysqli_connect("localhost", "root", "", "tripvice");
-// Check connection
-if ($link === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-
+include_once("connection.php");
 // Escape user inputs for security
 
  
@@ -19,11 +12,12 @@ if ($link === false) {
     $description = mysqli_real_escape_string($link, $_REQUEST['description']);
     $user_id = $_SESSION['user_id'];
     //getting the image and uploading it to a separate folder
-    $uid = uniqid();
-    $image = $uid . $_FILES['image']['name'];
-    move_uploaded_file($_FILES['image']['tmp_name'],'uploads/' . $uid . $_FILES['image']['name']);
+    $filename = $_FILES["image"]["name"];
+    $tempname = $_FILES["image"]["tmp_name"];
+    $folder = "./uploads/" . $filename;
+    move_uploaded_file($tempname, $folder);
     //inserting the review
-    $sql = "INSERT INTO review (title, type, address, description,image, user_id) VALUES ('$title', '$type', '$address', '$description', '$image', '$user_id')";
+    $sql = "INSERT INTO review (title, type, address, description,filename,user_id) VALUES ('$title', '$type', '$address', '$description','$filename', '$user_id')";
         
         if (mysqli_query($link, $sql)) {
             echo "Record added successfully.";
