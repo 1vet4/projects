@@ -39,18 +39,23 @@
                 $ratio=0;
               }?>
                <!--Display review logo  -->  
-              <div class="review-box">
-              <div class="box">
-              <a href="../pages/review_page.php?id=<?php echo $row['id'];?>"><img src="../uploads/<?php echo $row['filename']?>" width=200px height="200px"></a>
-              </div>
-              <div class="info">
-             
-                <p class="small-info"><?php echo $row['type']?> </p><br>
-                <a href="review_page.php" class="big-info"><?php echo $row['title']?></a><br>
-                <p class="small-info"><?php echo $authorName['name']?></p><br>
-                <p class="small-info"><?php echo $ratio ?> % Rating</p><br>
-              </div>
-              </div>
+               <div class="review-box">
+                <div class="box">
+                    <!-- Modify the anchor tag to wrap the image and set its href to the review page -->
+                    <a href="../pages/review_page.php?id=<?php echo $row['id']; ?>">
+                        <img src="../uploads/<?php echo $row['filename'] ?>" width="200px" height="200px">
+                    </a>
+                </div>
+                <div class="info">
+                    <p class="small-info"><?php echo $row['type'] ?></p><br>
+                    <!-- Modify the anchor tag to wrap the review title and set its href to the review page -->
+                    <a href="../pages/review_page.php?id=<?php echo $row['id']; ?>" class="big-info">
+                        <?php echo $row['title'] ?>
+                    </a><br>
+                    <p class="small-info"><?php echo $authorName['name'] ?></p><br>
+                    <p class="small-info"><?php echo $ratio ?> % Rating</p><br>
+                </div>
+            </div>
             
              
           <?php  $k++; }?> 
