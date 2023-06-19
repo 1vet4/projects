@@ -7,7 +7,7 @@
     <li><a href="../pages/profile.php" id="nav-profile">Profile</a></li>
     <li> <a href="../logout.php" id="nav-logout">Log Out</a></li>
     <li>
-      <form action="../search.php" method="post" id="nav-search">
+      <form action="../pages/search.php" method="post" id="nav-search">
         <input type="text" name="search" placeholder="Enter keyword">
         <input type="submit" name="submit" value="SEARCH" id="search-btn">
         </form>

@@ -6,8 +6,8 @@
        <li><a href="../pages/login.php" id="nav-login">Login</a>
        <li><a href="../pages/register.php" id="nav-register">Register</a>
        <li>
-      <form action="../search.php" method="post" id="nav-search">
-        <input type="text" name="search" placeholder="Enter keyword">
+      <form action="../pages/search.php" method="post" id="nav-search">
+        <input type="text" name="search" id="search-textarea" placeholder="Enter keyword">
         <input type="submit" name="submit" value="SEARCH" id="search-btn">
         </form>
     </li>

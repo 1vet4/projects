@@ -18,7 +18,7 @@ include_once("connection.php");
     
    
   <ul class="navbar">
-   <li class=logo> Approvve Reviews</li>
+   <li class=logo> Approve Reviews</li>
     <li class="log-out"><a href="./logout.php" >Log out</a>
 
   </ul>
