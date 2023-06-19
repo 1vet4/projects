@@ -58,9 +58,13 @@
              
           <?php  $k++; }?> 
         </div>
-    <p id="more-reviews">
-      <a href="./browse.php">More Reviews</a>
-    </p>
+    <?php
+    if (isset($_SESSION['user_id'])) {
+        echo '<p id="more-reviews"><a href="./browse_user.php">More Reviews</a></p>';
+    } else {
+        echo '<p id="more-reviews"><a href="./browse.php">More Reviews</a></p>';
+    }
+?>
     </div>
   </main>
 </body>
