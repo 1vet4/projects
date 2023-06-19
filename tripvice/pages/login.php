@@ -8,7 +8,7 @@
 <body>
 
   <!-- Include a header for guest  -->
-  <?php include("../headers/alt_header.php")?>
+  <?php include("../headers/alt_header.php");?>
       <section>
       
         <div class='air air1'></div>

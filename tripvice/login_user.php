@@ -6,7 +6,7 @@ if (isset($_SESSION['user_id'])) {
 }
 
 // Start a session
-require_once 'session.php';
+//require_once 'session.php';
 include_once("connection.php");
 
 $email = mysqli_real_escape_string($link, $_POST['email']);
@@ -21,6 +21,7 @@ if ($result) {
         if (password_verify($password, $user['password'])) {
             echo("password is verified <br>");
             // Password is correct, start a session
+            session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['name'] = $user['name'];
             $_SESSION['email'] = $user['email'];

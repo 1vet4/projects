@@ -11,9 +11,11 @@
 
 <body>
 <?php 
-include_once("../headers/alt_header.php") ;?>
+include_once("../headers/alt_header.php") ;
+include_once("../connection.php");
+include_once("../session.php");
+?>
     <main id="main">
-      
         <?php
         
         function getAuthorName($authorId)
@@ -58,8 +60,9 @@ include_once("../headers/alt_header.php") ;?>
                 $reviewType = $row['type'];
                 $likeCount = $row['likes'];
                 $dislikeCount = $row['dislikes'];
-                $reviewPhoto = $row['photo'];
+                $reviewPhoto = $row['filename'];
                 $reviewText = $row['description'];
+                $authorId = $row['user_id'];
 
                 // Fetch the comments for the review
                 $commentSql = "SELECT * FROM comment WHERE review_id = $reviewId";
@@ -85,7 +88,8 @@ include_once("../headers/alt_header.php") ;?>
                     'dislikeCount' => $dislikeCount,
                     'reviewPhoto' => $reviewPhoto,
                     'reviewText' => $reviewText,
-                    'comments' => $comments
+                    'comments' => $comments,
+                    'authorId' => $authorId
                 ];
             } else {
                 mysqli_close($conn);
@@ -122,7 +126,7 @@ include_once("../headers/alt_header.php") ;?>
                 </div>
                 <div id="photo-container">
                     <div class="arrow arrow-left">&#8249;</div>
-                    <img src="<?php echo $reviewPhoto; ?>" alt="Review Photo" id="review-photo" />
+                    <img src="../uploads/<?php echo $reviewPhoto; ?>" alt="Review Photo" id="review-photo" />
                     <div class="arrow arrow-right">&#8250;</div>
                 </div>
                 <p class="review-text">
@@ -160,6 +164,18 @@ include_once("../headers/alt_header.php") ;?>
                     <?php else: ?>
                         <p>No comments available.</p>
                     <?php endif; ?>
+                    <?php
+                    //Check if user_id == authorId
+                    if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == $authorId) {
+                        ?><br><br><p>Do you want to edit or delete your review?</p>
+                        <p>Your id: <?php echo $_SESSION['user_id']; ?></p>
+                        <p>Author id: <?php echo $authorId; ?></p>
+                        <a href="../pages/update_review_page.php?id=<?php echo $reviewId;?>">Edit</a>
+                        <a href="../pages/delete_review.php?id=<?php echo $reviewId;?>">Delete</a>
+                        <?php
+                    }
+                    ?>
+                    
                 </div>
 
                 <?php

@@ -14,15 +14,17 @@
                   include("../headers/alt_header.php");
             ?>
             <main id="main">
-            <h2>My reviews:</h2><br>
-            <h4>Waiting for approval</h4>
+            <h2>My reviews</h2><br>
+            <h4>Waiting for approval:</h4>
             
             <div class="container">
           <?php
             $userid=$_SESSION['user_id'];
-            $sql="SELECT * FROM review JOIN user WHERE review.approved=0 and user.id=$userid";
+            $sql = "SELECT *, review.id AS review_id, review.user_id AS author_id FROM review JOIN user ON review.user_id = user.id WHERE review.approved = 0 AND user.id = $userid";
             $result=mysqli_query($link,$sql);
             while($row=mysqli_fetch_assoc($result)){
+              $reviewId = $row['review_id'];
+              $authorId = $row['author_id'];
               $likes=$row['likes'];
               $dislikes=$row['dislikes'];
               if($dislikes!=0 && $likes!=0){
@@ -33,31 +35,34 @@
               else{
                 $ratio=0;
               }
-             
+              if($userid == $authorId && $row['approved']==0){
+                
               ?>
              
              <div class="review-box">
               <div class="box">
-              <a href="../pages/review_page.php"><img src="../uploads/<?php echo $row['filename']?>" width=200px height="200px"></a>
+              <a href="../pages/review_page.php?id=<?php echo $reviewId;?>"><img src="../uploads/<?php echo $row['filename']?>" width=200px height="200px"></a>
               </div>
               <div class="info">
                 <p class="small-info"><?php echo $row['type']?> </p><br>
                 <a href="review_page.php" class="big-info"><?php echo $row['title']?></a><br>
                 <p class="small-info"><?php echo $ratio ?> % Rating</p><br>
               </div>
-              </div>;
+              </div>
             
               
-         <?php } ?>
+         <?php }} ?>
           </div>
           <h4>Approved:</h4><br>
             <div class="container">
             
             <?php
                  $userid=$_SESSION['user_id'];
-                 $sql="SELECT * FROM review JOIN user WHERE review.approved=1 and user.id=$userid";
+                 $sql = "SELECT *, review.id AS review_id, review.user_id AS author_id FROM review JOIN user ON review.user_id = user.id WHERE review.approved = 1 AND user.id = $userid";
                  $result=mysqli_query($link,$sql);
                  while($row=mysqli_fetch_assoc($result)){
+                  $reviewId = $row['review_id'];
+                  $authorId = $row['author_id'];
                    $likes=$row['likes'];
                    $dislikes=$row['dislikes'];
                    if($dislikes!=0 && $likes!=0){
@@ -68,21 +73,22 @@
                    else{
                      $ratio=0;
                    }
-                  
+                   if($userid == $authorId && $row['approved']==1){
+
                    ?>
                   
                   <div class="review-box">
                    <div class="box">
-                   <a href="../pages/review_page.php"><img src="../uploads/<?php echo $row['filename']?>" width=200px height="200px"></a>
+                   <a href="../pages/review_page.php?id=<?php echo $reviewId;?>"><img src="../uploads/<?php echo $row['filename']?>" width=200px height="200px"></a>
                    </div>
                    <div class="info">
                      <p class="small-info"><?php echo $row['type']?> </p><br>
                      <a href="review_page.php" class="big-info"><?php echo $row['title']?></a><br>
                      <p class="small-info"><?php echo $ratio ?> % Rating</p><br>
                    </div>
-                   </div>;
+                   </div>
                  
-           <?php } ?>
+           <?php }} ?>
             </div>
     </body>
 </html>

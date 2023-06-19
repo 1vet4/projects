@@ -37,7 +37,7 @@ include("../session.php");
               }?>
               <div class="review-box">
               <div class="box">
-              <a href="../pages/review_page.php"><img src="../uploads/<?php echo $row['filename']?>" width=200px height="200px"></a>
+              <a href="../pages/review_page.php?id=<?php echo $row['id'];?>"><img src="../uploads/<?php echo $row['filename']?>" width=200px height="200px"></a>
               </div>
               <div class="info">
              
@@ -46,7 +46,7 @@ include("../session.php");
                 <p class="small-info"><?php echo $authorName['name']?></p><br>
                 <p class="small-info"><?php echo $ratio ?> % Rating</p><br>
               </div>
-              </div>;
+              </div>
             
               
 

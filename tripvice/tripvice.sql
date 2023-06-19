@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2023 at 09:15 PM
+-- Generation Time: Jun 19, 2023 at 02:29 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -57,18 +57,27 @@ CREATE TABLE `review` (
   `dislikes` int(11) NOT NULL DEFAULT 0,
   `approved` tinyint(1) NOT NULL DEFAULT 0,
   `user_id` int(11) NOT NULL,
-  `photo` varchar(200) DEFAULT 'background.jpg'
+  `filename` varchar(200) DEFAULT '',
+  `image` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Table stores data of a review';
 
 --
 -- Dumping data for table `review`
 --
 
-INSERT INTO `review` (`id`, `title`, `type`, `address`, `description`, `likes`, `dislikes`, `approved`, `user_id`, `photo`) VALUES
-(1, 'asd', 'asd', 'asd', 'asd', 1, 1, 0, 123, 'background.jpg'),
-(2, 'lol', 'lol', 'lol', 'ollo\r\n\r\n', 0, 0, 0, 123, 'background.jpg'),
-(3, 'id8', '1', '1', '1', 0, 0, 0, 8, 'background.jpg'),
-(4, '123', '123', '123', '123', 0, 0, 0, 9, 'background.jpg');
+INSERT INTO `review` (`id`, `title`, `type`, `address`, `description`, `likes`, `dislikes`, `approved`, `user_id`, `filename`, `image`) VALUES
+(13, 'asd', 'restaurant', 'asd', 'asd', 0, 0, 1, 54, 'background.jpg', 0x36343864643732633431333232),
+(14, 'gtgt', 'hotel', 'tgt', 'gtgt', 0, 0, 1, 54, 'background.jpg', 0x36343864643733333738353730),
+(15, 'ere', 'Activity', 'rer', 'rere', 0, 0, 1, 54, 'background.jpg', 0x36343864643961353462303538),
+(16, 'qqq', 'Hotel', 'qq', 'qqq', 0, 0, 1, 54, 'background.jpg', 0x36343865353964616539616537),
+(17, 'kk', 'Museum', 'kk', 'kk', 0, 0, 1, 54, 'background.jpg', 0x36343865353965366361393833),
+(18, 'sbf', 'Hotel', 'bfbf', 'bf', 0, 0, 1, 54, 'background.jpg', 0x36343865356238636631383737),
+(19, 'nbnb', 'Restaurant', 'bnb', 'bnb', 0, 0, 1, 54, 'background.jpg', 0x36343865653266303731396635666f746b65312e6a706567),
+(21, 'm', 'Hotel', 'm', 'm', 0, 0, 1, 54, 'fotke.png', 0x36343865656530386466646661666f746b652e706e67),
+(24, 'q', 'Restaurant', 'q', 'q', 0, 0, 1, 54, 'fotke1.jpeg', ''),
+(25, 'j', 'Museum', 'j', 'j', 0, 0, 1, 54, 'DFD_level_0.jpg', ''),
+(26, 'b', 'Restaurant', 'b', 'b', 0, 0, 1, 54, 'fotke2.jpg', ''),
+(27, 'er', 'Restaurant', 'err', 'er', 0, 0, 0, 54, 'DFD_level_0.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -89,13 +98,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`, `admin`) VALUES
-(3, 'asd', 'asd@gmail.com', '$2y$10$qY/DNIpNNTWtF', 0),
-(4, '123', '123@gmail.com', '$2y$10$p.z.o9XKy.J4k', 0),
-(5, 'new', 'new@gmail.com', '$2y$10$Oh1hUWMjp9qL9vOIwu5PAuOHaEFmLLM2aO3ALBwdUHCWr84Fzui8W', 0),
-(6, 'naujas', 'naujas@gmail.com', '$2y$10$Q3CmTDPPWlJz26yI8nhDz.Rnb8CuOptjPqYiyF8y.aOGlI3a0EV1e', 0),
-(7, 'naujas', 'naujas@gmail.com', '$2y$10$rk5nB3pOkIya6.8QOICLZ.YoAuamQjTuc0P3XfcA9SXaSy96iwQCK', 0),
-(8, '1', '1@gmail.com', '$2y$10$6fJNgeShP8wx3bpzMugkxeUaZIMPkcRCoue/4D6w1jNU79Lef3Eom', 0),
-(9, 'final', 'final@gmail.com', '$2y$10$EOI22sAdGK5PXoRGq9B.i.m1vUm34aRBxDxv4FuGve4wy2gk9HWXu', 0);
+(17, 'a', 'aa@gmail.com', '$2y$10$0ZjytT8dfdZNh/6njAkfsepY3lAcf7y064cgNMdPtO31upmf5mS1m', 0),
+(18, 'a', 'a@gmail.com', '$2y$10$9xkzZdBO/085Vrx4RCKnoebzZ1imzxyfij0qVpPOow5PX594eE3e.', 0),
+(50, 'admin', 'admin@gmail.com', 'admin', 1),
+(51, 'admin1', 'admin1@gmail.com', '$2a$12$Q6nfMvAXdLjrCYhrxHkEnuciCHf5EbEJb.ZalJ3JazZQVvwo/tL7K', 1),
+(52, 'bb', 'bbb@gmail.com', '$2y$10$bx4oIKlCkQMtEwS0atJLJejbCGUAX4CAKBcQUQoInyawLQJGRIZDC', 0),
+(53, 'bb', 'abbb@gmail.com', '$2y$10$fGpvTtKFYqafQB4.6JpPb.F02MUX52G54hXabml.cvRi2RLojm5/S', 0),
+(54, 'ttt', 'ttt@g.com', '$2y$10$zoow13RKGukphAa/gMvJMOftciNMnRqOS8pdlbLOWQdQTAmruTGmW', 0);
 
 --
 -- Indexes for dumped tables
@@ -111,13 +120,16 @@ ALTER TABLE `comment`
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `email_2` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -133,13 +145,23 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `review`
+--
+ALTER TABLE `review`
+  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
