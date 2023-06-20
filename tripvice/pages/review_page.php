@@ -105,6 +105,33 @@
             if ($reviewData) {
                 // Extract the variables from the returned array
                 extract($reviewData);
+                // Check if the user has already liked or disliked the review
+                $userLiked = false;
+                $userDisliked = false;
+
+                if (isset($_SESSION['user_id'])) {
+                    $userId = $_SESSION['user_id'];
+
+                    $conn = mysqli_connect("localhost", "root", "", "tripvice");
+
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
+
+                    $checkSql = "SELECT reaction FROM user_reaction WHERE user_id = $userId AND review_id = $reviewId";
+                    $checkResult = mysqli_query($conn, $checkSql);
+
+                    if (mysqli_num_rows($checkResult) > 0) {
+                        $row = mysqli_fetch_assoc($checkResult);
+                        if ($row['reaction'] == 'like') {
+                            $userLiked = true;
+                        } elseif ($row['reaction'] == 'dislike') {
+                            $userDisliked = true;
+                        }
+                    }
+
+                    mysqli_close($conn);
+                }
                 ?>
                 <h1>
                     <?php echo $reviewTitle; ?>
@@ -113,13 +140,12 @@
                     <?php echo $reviewType; ?>
                 </p>
                 <div id="like-dislike-ratio">
-                    <span id="like-count">
-                        <?php echo $likeCount; ?>
-                    </span>
-                    <span>/</span>
-                    <span id="dislike-count">
-                        <?php echo $dislikeCount; ?>
-                    </span>
+                <button class="reaction-button <?php echo $userLiked ? 'selected' : ''; ?>" id="like-button">
+                        Like <span id="like-count"><?php echo $likeCount; ?></span>
+                    </button>
+                    <button class="reaction-button <?php echo $userDisliked ? 'selected' : ''; ?>" id="dislike-button">
+                        Dislike <span id="dislike-count"><?php echo $dislikeCount; ?></span>
+                    </button>
                 </div>
                 <div id="photo-container">
                     <div class="arrow arrow-left">&#8249;</div>
@@ -141,11 +167,7 @@
                     </div>
                 </div>
 
-                <div id="like-dislike-section">
-                    <button id="like-button" class="rating-button">Like</button>
-                    <button id="dislike-button" class="rating-button">Dislike</button>
-                </div>
-                <br />
+                <br/>
 
                 <div id="comment-list">
                     <h3>Comments</h3>
@@ -220,6 +242,58 @@
         ?>
     </main>
 
-    <script src="../js/review.js"></script>
+    <script>
+        // JavaScript code to handle like and dislike button clicks
+
+        // Get the like and dislike buttons
+        const likeButton = document.getElementById("like-button");
+        const dislikeButton = document.getElementById("dislike-button");
+
+        // Get the like and dislike count elements
+        const likeCountElement = document.getElementById("like-count");
+        const dislikeCountElement = document.getElementById("dislike-count");
+
+        // Add event listeners to the like and dislike buttons
+        likeButton.addEventListener("click", handleLikeClick);
+        dislikeButton.addEventListener("click", handleDislikeClick);
+
+        function handleLikeClick() {
+            if (likeButton.classList.contains("selected")) {
+                // User unliked the review
+                likeButton.classList.remove("selected");
+                likeCountElement.textContent = parseInt(likeCountElement.textContent) - 1;
+            } else {
+                // User liked the review
+                likeButton.classList.add("selected");
+
+                if (dislikeButton.classList.contains("selected")) {
+                    // User also disliked the review, remove the dislike
+                    dislikeButton.classList.remove("selected");
+                    dislikeCountElement.textContent = parseInt(dislikeCountElement.textContent) - 1;
+                }
+
+                likeCountElement.textContent = parseInt(likeCountElement.textContent) + 1;
+            }
+        }
+
+        function handleDislikeClick() {
+            if (dislikeButton.classList.contains("selected")) {
+                // User undisliked the review
+                dislikeButton.classList.remove("selected");
+                dislikeCountElement.textContent = parseInt(dislikeCountElement.textContent) - 1;
+            } else {
+                // User disliked the review
+                dislikeButton.classList.add("selected");
+
+                if (likeButton.classList.contains("selected")) {
+                    // User also liked the review, remove the like
+                    likeButton.classList.remove("selected");
+                    likeCountElement.textContent = parseInt(likeCountElement.textContent) - 1;
+                }
+
+                dislikeCountElement.textContent = parseInt(dislikeCountElement.textContent) + 1;
+            }
+        }
+    </script>
 </body>
 </html>
