@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Review Page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,13 +7,12 @@
     <link href="../css/review.css?<?=filemtime("../css/review.css")?>" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 </head>
-
 <body>
-<?php 
-include_once("../headers/alt_header.php") ;
-include_once("../connection.php");
-include_once("../session.php");
-?>
+    <?php 
+    include_once("../headers/alt_header.php") ;
+    include_once("../connection.php");
+    include_once("../session.php");
+    ?>
     <main id="main">
         <?php
         
@@ -71,7 +69,6 @@ include_once("../session.php");
                 while ($commentRow = mysqli_fetch_assoc($commentResult)) {
                     $comments[] = [
                         'text' => $commentRow['comment'],
-                        //'rating' => $commentRow['rating'],
                         'author' => $commentRow['author_id']
                     ];
                 }
@@ -136,7 +133,11 @@ include_once("../session.php");
                 <h2 class="review-text">Were you satisfied with the review?</h2>
                 <div id="rating-section">
                     <div id="comment-section">
-                        <textarea id="comment" rows="4" cols="50" placeholder="Enter your comment"></textarea>
+                        <form method="post" action="">
+                            <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Enter your comment"></textarea>
+                            <input type="hidden" name="reviewId" value="<?php echo $reviewId; ?>"><br>
+                            <button type="submit" id="rating-button" name="rating-button">Submit</button>
+                        </form>
                     </div>
                 </div>
 
@@ -145,7 +146,6 @@ include_once("../session.php");
                     <button id="dislike-button" class="rating-button">Dislike</button>
                 </div>
                 <br />
-                <button id="rating-button">Submit</button>
 
                 <div id="comment-list">
                     <h3>Comments</h3>
@@ -157,7 +157,6 @@ include_once("../session.php");
                                 </p>
                                 <p class="comment-author">-
                                     <?php echo getAuthorName($comment['author']); ?>
-                                    <?php echo $comment['author']; ?>
                                 </p>
                             </div>
                         <?php endforeach; ?>
@@ -180,12 +179,47 @@ include_once("../session.php");
 
                 <?php
             } else {
-                echo "Review not found";
+                echo "<p>Review not found.</p>";
             }
+            if (isset($_POST['rating-button'])) {
+                $commentText = $_POST['comment'];
+                $reviewId = $_POST['reviewId'];
+                $authorId = $_SESSION['user_id'];
+            
+                // Check if the comment is not empty
+                if (!empty($commentText)) {
+                    $conn = mysqli_connect("localhost", "root", "", "tripvice");
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
+            
+                    // Prepare the SQL statement to insert the comment into the database
+                    $sql = "INSERT INTO comment (review_id, author_id, comment) VALUES (?, ?, ?)";
+                    $stmt = mysqli_prepare($conn, $sql);
+                    mysqli_stmt_bind_param($stmt, "iis", $reviewId, $authorId, $commentText);
+            
+                    // Execute the prepared statement
+                    if (mysqli_stmt_execute($stmt)) {
+                        // Comment inserted successfully
+                        echo "<p>Comment added successfully.</p>";
+                    } else {
+                        // Error occurred while inserting the comment
+                        echo "<p>Error adding comment: " . mysqli_error($conn) . "</p>";
+                    }
+            
+                    mysqli_stmt_close($stmt);
+                    mysqli_close($conn);
+                } else {
+                    // Comment is empty
+                    echo "<p>Please enter a comment before submitting.</p>";
+                }
+            }
+        } else {
+            echo "<p>No review ID provided.</p>";
         }
         ?>
     </main>
-    <script src="review.js"></script>
-</body>
 
+    <script src="../js/review.js"></script>
+</body>
 </html>
