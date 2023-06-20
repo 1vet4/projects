@@ -37,7 +37,7 @@ include("../headers/alt_header.php");?>
                            else{
                                 $ratio=0;
                           }
-               
+               $ratio = number_format($ratio, 2);
                     ?>
                
                <div class="review-box">
