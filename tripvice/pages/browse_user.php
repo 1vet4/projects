@@ -34,7 +34,9 @@ include("../session.php");
               }
               else{
                 $ratio=0;
-              }?>
+              }
+              $ratio = number_format($ratio, 2);
+              ?>
               <div class="review-box">
         <div class="box">
             <!-- Modify the anchor tag to wrap the image and set its href to the review page -->
