@@ -37,7 +37,7 @@
               }
               else{
                 $ratio=0;
-              }?>
+              }$ratio = number_format($ratio, 2);?>
                <!--Display review logo  -->  
                <div class="review-box">
                 <div class="box">
